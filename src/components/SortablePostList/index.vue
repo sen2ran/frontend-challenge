@@ -6,7 +6,7 @@
     :length="posts.length"
     :arrIndex="index"
     :key="post.id"
-    @sorting-post="sortingPostFn"
+    @sorting-post="(e) => $emit(`sorting-post`, e)"
   />
 </template>
 
@@ -17,10 +17,5 @@ export default {
     SinglePost,
   },
   props: ["posts"],
-  methods: {
-    sortingPostFn(payload) {
-      this.$emit("sorting-post", payload);
-    },
-  },
 };
 </script>

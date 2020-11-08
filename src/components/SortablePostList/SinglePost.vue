@@ -18,24 +18,27 @@ import Down from "../SVGs/Down";
 export default {
   components: {
     Up,
-    Down, 
+    Down,
   },
   props: ["post", "length", "arrIndex"],
-  methods: {
-    downfn() {
+  setup(props, context) {
+    const downfn = () => {
       let payload = {
-        index: this.arrIndex,
+        index: props.arrIndex,
         isUp: false,
       };
-      this.$emit("sorting-post", payload);
-    },
-    Upfn() {
+      console.log(payload);
+      context.emit("sorting-post", payload);
+    };
+    const Upfn = () => {
       let payload = {
-        index: this.arrIndex,
+        index: props.arrIndex,
         isUp: true,
       };
-      this.$emit("sorting-post", payload);
-    },
+      context.emit("sorting-post", payload);
+    };
+
+    return { downfn, Upfn };
   },
 };
 </script>

@@ -8,7 +8,7 @@
       :key="index"
       :action="action"
       :index="index"
-      @time-travel="timeTravelFn"
+      @time-travel="(e) => $emit(`time-travel`, e)"
     />
   </div>
 </template>
@@ -19,11 +19,6 @@ export default {
   props: ["actions"],
   components: {
     SingleTimeTravel,
-  },
-  methods: {
-    timeTravelFn(index) {
-      this.$emit("time-travel", index);
-    },
   },
 };
 </script>

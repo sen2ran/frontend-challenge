@@ -36,5 +36,4 @@ let posts = [
   },
 ];
 
-
 exports.Posts = posts;
