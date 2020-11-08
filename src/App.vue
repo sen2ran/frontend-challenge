@@ -40,7 +40,9 @@ export default {
       let timeTravelPayload = {
         old: payload.index,
         new: payload.isUp ? payload.index - 1 : payload.index + 1,
-        post: payload.isUp ? posts.value[payload.index - 1] : payload.index + 1,
+        post: payload.isUp
+          ? posts.value[payload.index - 1]
+          : posts.value[payload.index + 1],
       };
 
       actions.value.push(timeTravelPayload);

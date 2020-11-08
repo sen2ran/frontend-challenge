@@ -1,13 +1,15 @@
 <template>
   <p class="text-3xl text-white pb-5">Sortable Post List</p>
-  <SinglePost
-    v-for="(post, index) in posts"
-    :post="post"
-    :length="posts.length"
-    :arrIndex="index"
-    :key="post.id"
-    @sorting-post="(e) => $emit(`sorting-post`, e)"
-  />
+  <transition-group name="flip-list" >
+    <SinglePost
+      v-for="(post, index) in posts"
+      :post="post"
+      :length="posts.length"
+      :arrIndex="index"
+      :key="post.id"
+      @sorting-post="(e) => $emit(`sorting-post`, e)"
+    />
+  </transition-group>
 </template>
 
 <script>
@@ -19,3 +21,9 @@ export default {
   props: ["posts"],
 };
 </script>
+
+<style scoped>
+.flip-list-move {
+  transition: transform 0.8s ease;
+}
+</style>
