@@ -1,6 +1,6 @@
 <template>
   <p class="text-3xl text-white pb-5">Sortable Post List</p>
-  <transition-group name="flip-list" >
+  <transition-group name="flip-list">
     <SinglePost
       v-for="(post, index) in posts"
       :post="post"
@@ -19,6 +19,7 @@ export default {
     SinglePost,
   },
   props: ["posts"],
+  emits: ["sorting-post"],
 };
 </script>
 

@@ -17,6 +17,7 @@
 import SingleTimeTravel from "./SingleTimeTravel";
 export default {
   props: ["actions"],
+  emits: ["time-travel"],
   components: {
     SingleTimeTravel,
   },

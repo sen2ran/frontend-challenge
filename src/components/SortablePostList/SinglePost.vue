@@ -21,6 +21,7 @@ export default {
     Down,
   },
   props: ["post", "length", "arrIndex"],
+  emits: ["sorting-post"],
   setup(props, context) {
     const downfn = () => {
       let payload = {

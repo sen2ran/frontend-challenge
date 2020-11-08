@@ -17,6 +17,7 @@ import { computed } from "vue";
 
 export default {
   props: ["action", "index"],
+  emits: ["time-travel"],
   setup(props) {
     const str = computed(() => {
       return `Moved "${props.action.post.title}" from Index ${props.action.old} to Index
