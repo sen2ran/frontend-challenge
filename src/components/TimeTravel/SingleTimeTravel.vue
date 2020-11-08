@@ -18,7 +18,6 @@ import { computed } from "vue";
 export default {
   props: ["action", "index"],
   setup(props) {
-    console.log(props);
     const str = computed(() => {
       return `Moved "${props.action.post.title}" from Index ${props.action.old} to Index
           ${props.action.new}`;
